@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        *{
+            font-family: "Microsoft Jhenghei";
+        }
+        .list-group{
+            width: 200px;
+            border: #1d243b 1px solid ;
+            box-shadow: rgb(150, 150, 150) 5px 5px 5px;
+            /* border-bottom: none; */
+            position: fixed;
+            left: 0;
+            top: 25%;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
+            margin: 0px;
+        }
+        /* GLOBAL */
+        .title{
+            text-align: center;
+            width: 100%;
+            background-color: #1d243b;
+            padding: 15px 0px;
+            color: white;
+            font-size: 25px;
+            margin: 0px;
+        }
+        .collapes{
+            margin-top: 0px;
+            padding: 0px;
+        }
+        .collapes ul{
+            padding: 5px 0px;
+            padding-right: 10px;
+            text-align: right;
+            display: none;
+            background-color: rgb(212, 212, 212);
+        }
+        .collapes-item li{
+            padding: 10px 0px;
+            font-weight: 600;
+        }
+        .collapes div{
+            border-bottom:#1d243b 1px solid ;
+            padding: 10px 0px;
+            padding-left: 10px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .click-trigger{
+            cursor: pointer;
+        }
+        .click-trigger:hover{
+            background-color:  #1d243b;
+            color: white;
+        }
+        .triggerToggle{
+            background-color:  #1d243b;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="list-group">
+        <h1 class="title">DIY 零組件</h1>
+        <ul class="collapes">
+            <div class="click-trigger">核心零件</div>
+            <ul class="collapes-item">
+                <li><a href="#">AMD CPU</a></li>
+                <li><a href="#">INTEL CPU</a></li>
+                <li><a href="#">AMD主機板</a></li>
+                <li><a href="#">INTEL主機板</a></li>
+            </ul>
+            <div class="click-trigger">顯示卡</div>
+            <ul class="collapes-item">
+                <li><a href="#">AMD顯示卡</a></li>
+                <li><a href="#">NVIDIA RTX顯卡</a></li>
+                <li><a href="#">NVIDIA GTX顯卡</a></li>
+                <li><a href="#">NVIDIA GT顯卡</a></li>
+            </ul>
+            <div class="click-trigger">記憶體</div>
+            <ul class="collapes-item">
+                <li><a href="#">桌機記憶體</a></li>
+                <li><a href="#">超頻桌機記憶體</a></li>
+                <li><a href="#">筆電記憶體</a></li>
+            </ul>
+            <div class="click-trigger">儲存硬碟</div>
+            <ul class="collapes-item">
+                <li><a href="#">M.2 SSD</a></li>
+                <li><a href="#">STAT SSD</a></li>
+                <li><a href="#">SATA HDD</a></li>
+            </ul>
+            <div class="click-trigger">機殼</div>
+            <ul class="collapes-item">
+                <li><a href="#">ATX 機殼</a></li>
+                <li><a href="#">microATX機殼</a></li>
+                <li><a href="#">MiniITX機殼</a></li>
+            </ul>
+            <div class="click-trigger">電源供應器</div>
+            <ul class="collapes-item">
+                <li><a href="#">400W 以下</a></li>
+                <li><a href="#">400W ─ 450W</a></li>
+                <li><a href="#">500W ─ 550W</a></li>
+                <li><a href="#">600W ─ 650W</a></li>
+                <li><a href="#">700W ─ 850W</a></li>
+                <li><a href="#">1000W 以上</a></li>
+            </ul>
+            <div class="click-trigger">散熱裝置</div>
+            <ul class="collapes-item">
+                <li><a href="#">水冷散熱器</a></li>
+                <li><a href="#">空冷散熱器</a></li>
+                <li><a href="#">系統扇</a></li>
+                <li><a href="#">SSD散熱片</a></li>
+                <li><a href="#">散熱膏</a></li>
+            </ul>
+            <div class="click-trigger">擴充零件</div>
+            <ul class="collapes-item">
+                <li><a href="#">光碟機</a></li>
+                <li><a href="#">外接硬碟殼座</a></li>
+                <li><a href="#">音效卡</a></li>
+                <li><a href="#">網路卡</a></li>
+                <li><a href="#">其他擴充卡</a></li>
+            </ul>
+            <div class="click-trigger">DIY電腦套餐</div>
+            <ul class="collapes-item">
+                <li><a href="#">ASUS品牌套餐機</a></li>
+                <li><a href="#">微星品牌套餐機</a></li>
+                <li><a href="#">綜合品牌套餐機</a></li>
+            </ul>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.click-trigger').click(function(){
+                $(this).next().slideToggle();
+                $(this).toggleClass('triggerToggle')
+            })
+        }); 
+    </script>
+</body>
+</html>
